@@ -1,0 +1,55 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
+export default function About() {
+  const titleRef = useScrollAnimation<HTMLHeadingElement>();
+  const textRef = useScrollAnimation<HTMLParagraphElement>();
+  const btnRef = useScrollAnimation<HTMLDivElement>();
+
+  const handleScroll = (href: string) => {
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="about" className="bg-[#1a2332] py-24 px-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2
+          ref={titleRef}
+          className="fade-up text-4xl md:text-5xl font-semibold mb-12"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          About{' '}
+          <span className="text-[#f5a623]" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Me
+          </span>
+        </h2>
+
+        <p
+          ref={textRef}
+          className="fade-up text-white/80 text-base md:text-lg leading-relaxed mb-14"
+          style={{ transitionDelay: '0.15s' }}
+        >
+          "I'm a UI/UX designer who believes great design should feel invisible — intuitive enough
+          that users never have to think twice. I focus on turning complex problems into simple,
+          accessible interfaces through research, wireframing, and iterative prototyping in Figma.
+          When I'm not designing, I'm exploring how color, typography, and motion shape the way
+          people feel about a product. I love solving real problems for real people, one thoughtful
+          interaction at a time."
+        </p>
+
+        <div
+          ref={btnRef}
+          className="fade-up"
+          style={{ transitionDelay: '0.3s' }}
+        >
+          <button
+            onClick={() => handleScroll('#contact')}
+            className="px-10 py-3.5 bg-[#f5a623] text-[#1a2332] text-sm font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
