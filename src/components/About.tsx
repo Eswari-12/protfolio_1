@@ -11,11 +11,11 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-[#1a2332] py-24 px-6">
+    <section id="about" className="bg-[#1a2332] py-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2
           ref={titleRef}
-          className="fade-up text-4xl md:text-5xl font-semibold mb-12"
+          className="fade-up text-3xl md:text-[30px] font-semibold mb-10"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           About{' '}
@@ -26,7 +26,7 @@ export default function About() {
 
         <p
           ref={textRef}
-          className="fade-up text-white/80 text-base md:text-lg leading-relaxed mb-14"
+          className="fade-up text-white/75 text-sm md:text-[13px] leading-relaxed mb-12"
           style={{ transitionDelay: '0.15s' }}
         >
           "I'm a UI/UX designer who believes great design should feel invisible — intuitive enough
@@ -44,7 +44,7 @@ export default function About() {
         >
           <button
             onClick={() => handleScroll('#contact')}
-            className="px-10 py-3.5 bg-[#f5a623] text-[#1a2332] text-sm font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg"
+            className="px-8 py-3 bg-[#f5a623] text-[#1a2332] text-[11px] font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg"
           >
             Get in Touch
           </button>

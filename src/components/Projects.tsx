@@ -92,15 +92,15 @@ function ProjectRow({ project }: { project: Project }) {
         className={`${project.imageLeft ? 'fade-right' : 'fade-left'} flex-1 text-center md:text-left`}
       >
         <h3
-          className="text-white text-2xl md:text-3xl font-semibold mb-5"
+          className="text-white text-xl md:text-[20px] font-semibold mb-4"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {project.title}
         </h3>
-        <p className="text-white/70 text-sm md:text-base leading-relaxed mb-7">
+        <p className="text-white/70 text-[12px] md:text-[13px] leading-[1.45] mb-6">
           {project.description}
         </p>
-        <button className="px-8 py-3 bg-[#f5a623] text-[#1a2332] text-sm font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg">
+        <button className="px-7 py-2.5 bg-[#f5a623] text-[#1a2332] text-[11px] font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg">
           View Project
         </button>
       </div>
@@ -112,11 +112,11 @@ export default function Projects() {
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
 
   return (
-    <section id="projects" className="bg-[#1a2332] py-24 px-6">
+    <section id="projects" className="bg-[#1a2332] py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <h2
           ref={titleRef}
-          className="fade-up text-4xl md:text-5xl font-semibold text-center mb-16"
+          className="fade-up text-3xl md:text-[30px] font-semibold text-center mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           My{' '}

@@ -38,17 +38,7 @@ html {
 
 /* Section padding */
 .section-pad {
-  padding: 80px 0;
-}
-
-/* Dotted circle animation */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.spin-slow {
-  animation: spin-slow 20s linear infinite;
+  padding: 64px 0;
 }
 
 /* Fade in up animation for intersection observer */

@@ -32,10 +32,10 @@ function InternshipCard({ intern, index }: { intern: Internship; index: number }
         boxShadow: '0 2px 24px rgba(0,0,0,0.3)',
       }}
     >
-      <h3 className="text-white text-base md:text-lg font-semibold mb-4 leading-snug">
+      <h3 className="text-white text-[15px] md:text-[17px] font-semibold mb-4 leading-snug">
         {intern.title}
       </h3>
-      <p className="text-white/65 text-sm leading-relaxed text-center">
+      <p className="text-white/65 text-[12px] leading-[1.45] text-center">
         {intern.description}
       </p>
     </div>
@@ -46,11 +46,11 @@ export default function Internships() {
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
 
   return (
-    <section id="internship" className="bg-[#1a2332] py-24 px-6">
+    <section id="internship" className="bg-[#1a2332] py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <h2
           ref={titleRef}
-          className="fade-up text-4xl md:text-5xl font-semibold text-center mb-14"
+          className="fade-up text-3xl md:text-[30px] font-semibold text-center mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           My{' '}

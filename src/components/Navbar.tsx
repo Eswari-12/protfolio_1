@@ -31,7 +31,7 @@ export default function Navbar() {
         scrolled ? 'bg-[#1a2332]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo placeholder — left side empty like design */}
         <div />
 
@@ -41,7 +41,7 @@ export default function Navbar() {
             <li key={link.label}>
               <button
                 onClick={() => handleNav(link.href)}
-                className="text-white text-sm font-medium hover:text-[#f5a623] transition-colors duration-200"
+                className="text-white text-[10px] font-medium hover:text-[#f5a623] transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -81,7 +81,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <button
                   onClick={() => handleNav(link.href)}
-                  className="text-white text-base font-medium hover:text-[#f5a623] transition-colors"
+                  className="text-white text-sm font-medium hover:text-[#f5a623] transition-colors"
                 >
                   {link.label}
                 </button>

@@ -92,8 +92,8 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
       }}
     >
       <div className="mb-5">{skill.icon}</div>
-      <h3 className="text-white text-xl font-semibold mb-4">{skill.title}</h3>
-      <p className="text-white/65 text-sm leading-relaxed">{skill.description}</p>
+      <h3 className="text-white text-lg font-semibold mb-3">{skill.title}</h3>
+      <p className="text-white/65 text-[12px] leading-[1.35]">{skill.description}</p>
     </div>
   );
 }
@@ -102,11 +102,11 @@ export default function Skills() {
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
 
   return (
-    <section id="skills" className="bg-[#1a2332] py-24 px-6">
+    <section id="skills" className="bg-[#1a2332] py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <h2
           ref={titleRef}
-          className="fade-up text-4xl md:text-5xl font-semibold text-center mb-16"
+          className="fade-up text-3xl md:text-[30px] font-semibold text-center mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           My{' '}
