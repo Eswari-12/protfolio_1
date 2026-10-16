@@ -11,7 +11,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-[#1a2332] py-20 px-6">
+    <section id="about" className="bg-[#080b10] py-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2
           ref={titleRef}
@@ -19,14 +19,14 @@ export default function About() {
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           About{' '}
-          <span className="text-[#f5a623]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <span className="text-[#2798c5]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Me
           </span>
         </h2>
 
         <p
           ref={textRef}
-          className="fade-up text-white/75 text-sm md:text-[13px] leading-relaxed mb-12"
+          className="fade-up text-white/75 text-[16px] md:text-[16px] leading-relaxed mb-12"
           style={{ transitionDelay: '0.15s' }}
         >
           "I'm a UI/UX designer who believes great design should feel invisible — intuitive enough
@@ -44,7 +44,7 @@ export default function About() {
         >
           <button
             onClick={() => handleScroll('#contact')}
-            className="px-8 py-3 bg-[#f5a623] text-[#1a2332] text-[11px] font-semibold rounded hover:bg-[#d4891a] transition-colors duration-200 shadow-lg"
+            className="px-8 py-3 bg-[#2798c5] text-[#080b10] text-[11px] font-semibold rounded hover:bg-[#197da8] transition-colors duration-200 shadow-lg"
           >
             Get in Touch
           </button>

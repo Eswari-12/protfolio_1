@@ -1,20 +1,28 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Internship {
+  period: string;
+  company: string;
   title: string;
   description: string;
+  certificateUrl?: string;
 }
 
 const internships: Internship[] = [
   {
-    title: 'UI/UX Design Intern | Amdox Technology | 3 Months [April 2026 - July 2026]',
+    period: 'APR 2026 — JUL 2026',
+    company: 'Amdox Technology',
+    title: 'UI/UX Design Intern',
     description:
-      'Designed the UI/UX for a Doctor Appointment Booking App, focusing on simplifying the patient journey — from searching for a doctor to booking and managing appointments. Contributed to wireframes, high-fidelity screens, and interactive prototypes in Figma. Completed the internship with a certification.',
+      'Designed the UI/UX for a doctor appointment booking app, from user flows and wireframes to high-fidelity screens and interactive prototypes.',
+    certificateUrl: '/certificate.pdf',
   },
   {
-    title: 'UI/UX Design Intern | Xplore Intellects | 3 Months [Aug 2026 - Oct 2026]',
+    period: 'AUG 2026 — OCT 2026',
+    company: 'Xplore Intellects',
+    title: 'UI/UX Design Intern',
     description:
-      'Designed MirrorMe, an AI-powered mock interview app that helps job seekers practice interviews with real-time feedback on body language, eye contact, and speaking skills. Led the end-to-end design process — user research, personas, information architecture, wireframes, and high-fidelity prototypes.',
+      'Led the end-to-end design process for MirrorMe, an AI-powered mock interview app focused on real-time feedback and confidence-building.',
   },
 ];
 
@@ -24,20 +32,50 @@ function InternshipCard({ intern, index }: { intern: Internship; index: number }
   return (
     <div
       ref={ref}
-      className="fade-up rounded-2xl p-8 mb-6"
+      className="fade-up mb-6 border border-[#2798c5]/70 bg-[#111820] p-6 md:p-8"
       style={{
         transitionDelay: `${index * 0.15}s`,
-        background: 'rgba(30,25,15,0.6)',
-        border: '1px solid rgba(245,166,35,0.5)',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.3)',
       }}
     >
-      <h3 className="text-white text-[15px] md:text-[17px] font-semibold mb-4 leading-snug">
-        {intern.title}
-      </h3>
-      <p className="text-white/65 text-[12px] leading-[1.45] text-center">
-        {intern.description}
-      </p>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.35fr)_auto] md:items-center md:gap-8">
+        <div>
+          <div className="mb-5 text-[#2798c5] text-[9px] md:text-[10px] font-medium tracking-[0.12em] uppercase">
+            {intern.period}
+          </div>
+          <h3 className="text-white text-[22px] md:text-[27px] leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            {intern.title}
+          </h3>
+        </div>
+
+        <div>
+          <h4 className="mb-3 text-white text-[14px] md:text-[17px] font-semibold leading-tight">
+            {intern.company}
+          </h4>
+          <p className="text-white/75 text-[8px] md:text-[11px] leading-[1.6]">
+            {intern.description}
+          </p>
+        </div>
+
+        <div className="md:text-right">
+          {intern.certificateUrl ? (
+            <a
+              href={intern.certificateUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center border border-[#2798c5] px-4 py-2 text-[8px] md:text-[9px] font-medium tracking-[0.12em] uppercase text-[#2798c5] transition-colors hover:bg-[#2798c5] hover:text-[#080b10]"
+            >
+              View Certificate
+            </a>
+          ) : (
+            <button
+              type="button"
+              className="inline-flex items-center justify-center border border-[#2798c5] px-4 py-2 text-[8px] md:text-[9px] font-medium tracking-[0.12em] uppercase text-[#2798c5]"
+            >
+              View Certificate
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -46,15 +84,15 @@ export default function Internships() {
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
 
   return (
-    <section id="internship" className="bg-[#1a2332] py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="internship" className="bg-[#080b10] py-20 px-6">
+      <div className="mx-auto w-full max-w-[1768px]">
         <h2
           ref={titleRef}
           className="fade-up text-3xl md:text-[30px] font-semibold text-center mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           My{' '}
-          <span className="text-[#f5a623]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <span className="text-[#2798c5]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Internships
           </span>
         </h2>

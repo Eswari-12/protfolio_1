@@ -28,20 +28,17 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#1a2332]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-[#080b10]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo placeholder — left side empty like design */}
-        <div />
-
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-start">
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-7 lg:gap-9">
           {links.map((link) => (
             <li key={link.label}>
               <button
                 onClick={() => handleNav(link.href)}
-                className="text-white text-[10px] font-medium hover:text-[#f5a623] transition-colors duration-200"
+                className="text-white text-[11px] sm:text-[12px] font-medium tracking-[0.08em] hover:text-[#2798c5] transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -75,13 +72,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#1a2332]/98 backdrop-blur-md px-6 pb-6">
+        <div className="md:hidden bg-[#080b10]/98 backdrop-blur-md px-6 pb-6">
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.label}>
                 <button
                   onClick={() => handleNav(link.href)}
-                  className="text-white text-sm font-medium hover:text-[#f5a623] transition-colors"
+                  className="text-white text-sm font-medium hover:text-[#2798c5] transition-colors"
                 >
                   {link.label}
                 </button>

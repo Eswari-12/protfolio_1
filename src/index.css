@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #1a2332;
+  background-color: #080b10;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
   margin: 0;
@@ -24,16 +24,16 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a2332;
+  background: #080b10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f5a623;
+  background: #2798c5;
   border-radius: 3px;
 }
 
 /* Orange gradient text */
 .text-orange {
-  color: #f5a623;
+  color: #2798c5;
 }
 
 /* Section padding */
@@ -84,4 +84,41 @@ html {
 .scale-in.visible {
   opacity: 1;
   transform: scale(1);
+}
+
+.skill-interaction {
+  transition: opacity 0.6s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.skill-interaction::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #197da8, #8fc9df 38%, #2798c5 72%, #197da8) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.skill-interaction:hover,
+.skill-interaction:active {
+  transform: scale(0.985);
+  box-shadow: 0 0 16px rgba(39, 152, 197, 0.18), inset 0 0 20px rgba(39, 152, 197, 0.07);
+}
+
+.skill-interaction:hover::after,
+.skill-interaction:active::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-interaction:hover,
+  .skill-interaction:active {
+    transform: none;
+  }
 }
