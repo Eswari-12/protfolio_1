@@ -85,7 +85,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
   return (
     <div
       ref={ref}
-      className="scale-in skill-interaction relative h-full min-h-[230px] border border-white/20 bg-[#111820] px-3 py-4 text-left sm:px-4 sm:py-5"
+      className="scale-in skill-interaction relative h-full min-h-[230px] border border-white/20 bg-[#111820] px-3 py-4 text-center sm:px-4 sm:py-5"
       style={{
         transitionDelay: `${index * 0.1}s`,
       }}
@@ -103,7 +103,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
         {skill.title}
       </h3>
 
-      <p className="text-white/70 text-[10px] leading-[1.45] max-w-[170px] sm:max-w-[190px]">
+      <p className="mx-auto text-white/70 text-[10px] leading-[1.45] max-w-[170px] sm:max-w-[190px]">
         {skill.description}
       </p>
     </div>
@@ -114,9 +114,9 @@ export default function Skills() {
   return (
     <section id="skills" className="bg-[#080b10] py-20 px-6">
       <div className="max-w-[1360px] mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="mb-8">
+        <div className="mb-8 text-center">
           <h2
-            className="text-left text-3xl md:text-[30px] font-semibold"
+            className="text-3xl md:text-[30px] font-semibold"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             <>
@@ -126,7 +126,7 @@ export default function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {skills.map((skill, i) => (
             <div key={skill.title} className="min-w-0">
               <SkillCard skill={skill} index={i} />
